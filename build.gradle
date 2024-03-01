@@ -16,12 +16,22 @@ repositories {
 }
 
 dependencies {
+	//기본
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	//jackson : json 형태 변환
 	implementation 'com.fasterxml.jackson.core:jackson-core:2.16.1'
 	implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
 
+	//동적 페이지 변환
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:3.2.3'
+
+	//DBMS 연결
+	//자바코드안에서 DB를 변환하게 해준다
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
+	compileOnly 'org.projectlombok:lombok'
 }
 
 tasks.named('test') {
